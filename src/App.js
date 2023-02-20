@@ -184,11 +184,13 @@ function App() {
           <h1 className="paragraph-7">
             OUR<br></br>WHITEPAPER
           </h1>
-          <motion.button
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 1.1 }}
-            className="btn-3"
-          ></motion.button>
+          <a href="shimeka.pdf" target={"_blank"}>
+            <motion.button
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 1.1 }}
+              className="btn-3"
+            ></motion.button>
+          </a>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
