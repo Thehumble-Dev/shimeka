@@ -88,7 +88,16 @@ function App() {
           whileInView={{ opacity: 1 }}
           className="socials"
         >
-          <p className="socials-text">CONTACT ADDRESS ↗</p>
+          <p
+            onClick={() => {
+              navigator.clipboard.writeText(
+                "0xa883a9dbdea417c8a05b2c9963792c2038e1d841"
+              );
+            }}
+            className="socials-text"
+          >
+            CONTACT ADDRESS ↗
+          </p>
           <span className="socials-icons">
             <a
               style={{ textDecoration: "none" }}
