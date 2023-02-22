@@ -1,7 +1,8 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState, useRef } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import "./App.css";
+import { Tooltip } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //API Key: YCW115IUSK8A7IGEM77D4UIWA3IHRDDDIB;
@@ -12,6 +13,14 @@ function App() {
   const [shibPrice, setShibPrice] = useState();
   const [ethPrice, setEthPrice] = useState();
   const [btcPrice, setBtcPrice] = useState();
+  const tooltipRef = useRef();
+  useEffect(() => {
+    const tooltip = new Tooltip(tooltipRef.current, {
+      title: "copy to clipboard",
+      placement: "top",
+      trigger: "hover",
+    });
+  }, []);
 
   useLayoutEffect(() => {
     axios
@@ -88,16 +97,18 @@ function App() {
           whileInView={{ opacity: 1 }}
           className="socials"
         >
-          <p
+          <a
+            style={{ textDecoration: "none" }}
             onClick={() => {
               navigator.clipboard.writeText(
                 "0xa883a9dbdea417c8a05b2c9963792c2038e1d841"
               );
             }}
             className="socials-text"
+            ref={tooltipRef}
           >
             CONTACT ADDRESS ↗
-          </p>
+          </a>
           <span className="socials-icons">
             <a
               style={{ textDecoration: "none" }}

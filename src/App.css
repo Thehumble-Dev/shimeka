@@ -390,3 +390,8 @@ Druk
 .paragraph-12:hover {
   text-decoration: underline;
 }
+.socials-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #fff;
+}
